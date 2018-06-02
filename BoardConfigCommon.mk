@@ -150,20 +150,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /system/lib/libandroid.so|libshim_ril.so \
-    /system/lib/libmdmcutback.so|libqsap_shim.so \
-    /system/lib/libmot_sensorlistener.so|libsensor.so \
-    /system/lib/libjustshoot.so|libshims_camera.so \
-    /system/vendor/lib/libmmcamera_wavelet_lib.so|libc_util.so \
-    /system/vendor/lib/libqomx_jpegenc.so|libboringssl-compat.so \
-    /system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so
-
-# Sp-shim
-TARGET_LD_PRELOAD := \
-    /system/lib/libboringssl-compat.so
-
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
